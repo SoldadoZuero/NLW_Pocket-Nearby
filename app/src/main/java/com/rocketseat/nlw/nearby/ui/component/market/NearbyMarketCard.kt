@@ -52,7 +52,10 @@ fun NearbyMarketCard(
         }
     ) {
         Row(
-            modifier = Modifier.fillMaxWidth().background(Gray100).padding(8.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(Gray100)
+                .padding(8.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(16.dp)
         ) {
@@ -109,12 +112,13 @@ private fun NearbyMarketCardPreview() {
             name = "Sabor Grill",
             description = "Churrascaria com cortes nobres e buffet variado. Experiência completa para os amantes de carne.",
             coupons = 10,
-            rules = emptyList(),
+//            rules = emptyList(),
             latitude = -23.55974230991911,
             longitude = -46.65814845249887,
             address = "Av. Paulista - Bela Vista",
             phone = "(11) 94567-1212",
             cover = "https://images.unsplash.com/photo-1498654896293-37aacf113fd9?w=400&h=300"
         ),
-    ) { }
+        onClick = {}
+    )
 }

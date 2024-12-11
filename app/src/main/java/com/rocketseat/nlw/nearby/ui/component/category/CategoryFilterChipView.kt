@@ -3,7 +3,7 @@ package com.rocketseat.nlw.nearby.ui.component.category
 import androidx.annotation.DrawableRes
 import com.rocketseat.nlw.nearby.R
 
-enum class NearbyCategoryFilterChipView(
+enum class CategoryFilterChipView(
     val description: String,
     @DrawableRes val icon: Int
 ) {
@@ -17,8 +17,8 @@ enum class NearbyCategoryFilterChipView(
     PADARIA(description = "Padaria", icon = R.drawable.ic_bakery);
 
     companion object {
-        fun fromDescription(description: String): NearbyCategoryFilterChipView? {
-            return  entries.find { it.description == description }
+        fun fromDescription(description: String): CategoryFilterChipView? {
+            return entries.find { it.description == description }
         }
     }
 }

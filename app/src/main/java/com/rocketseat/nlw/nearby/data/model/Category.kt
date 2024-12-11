@@ -1,8 +1,7 @@
 package com.rocketseat.nlw.nearby.data.model
 
 import androidx.annotation.DrawableRes
-import com.rocketseat.nlw.nearby.ui.component.category.NearbyCategoryFilterChipView
-
+import com.rocketseat.nlw.nearby.ui.component.category.CategoryFilterChipView
 
 data class Category(
     val id: String,
@@ -10,5 +9,5 @@ data class Category(
 ) {
     @get:DrawableRes
     val icon: Int?
-        get() = NearbyCategoryFilterChipView.fromDescription(description = name)?.icon
+        get() = CategoryFilterChipView.fromDescription(description = name)?.icon
 }

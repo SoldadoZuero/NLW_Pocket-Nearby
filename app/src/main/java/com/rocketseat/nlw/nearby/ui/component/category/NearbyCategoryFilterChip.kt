@@ -5,8 +5,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.FilterChipDefaults
-import androidx.compose.material3.Text
 import androidx.compose.material3.Icon
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -26,9 +26,10 @@ fun NearbyCategoryFilterChip(
     isSelected: Boolean,
     onClick: (isSelected: Boolean) -> Unit
 ) {
-    FilterChip(modifier = modifier
-        .padding(2.dp)
-        .heightIn(min = 36.dp),
+    FilterChip(
+        modifier = modifier
+            .padding(2.dp)
+            .heightIn(min = 36.dp),
         elevation = FilterChipDefaults.filterChipElevation(
             elevation = 8.dp
         ),
@@ -65,6 +66,7 @@ fun NearbyCategoryFilterChip(
         }
     )
 }
+
 @Preview
 @Composable
 private fun NearbyCategoryFilterChipPreview() {
@@ -78,6 +80,7 @@ private fun NearbyCategoryFilterChipPreview() {
     )
 }
 
+
 @Preview
 @Composable
 private fun NearbyCategoryFilterChipNotSelectedPreview() {
@@ -89,5 +92,4 @@ private fun NearbyCategoryFilterChipNotSelectedPreview() {
         isSelected = false,
         onClick = {}
     )
-
 }
