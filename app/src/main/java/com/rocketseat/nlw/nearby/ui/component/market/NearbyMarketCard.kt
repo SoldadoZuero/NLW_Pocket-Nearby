@@ -1,6 +1,5 @@
 package com.rocketseat.nlw.nearby.ui.component.market
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
@@ -27,6 +26,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil3.compose.AsyncImage
 import com.rocketseat.nlw.nearby.R
 import com.rocketseat.nlw.nearby.data.model.Market
 import com.rocketseat.nlw.nearby.ui.theme.Gray100
@@ -40,7 +40,7 @@ import com.rocketseat.nlw.nearby.ui.theme.Typography
 fun NearbyMarketCard(
     modifier: Modifier = Modifier,
     market: Market,
-    onClick: (Market) -> Unit
+    onClick: (Market) -> Unit,
 ) {
     Card(
         modifier = modifier
@@ -59,16 +59,17 @@ fun NearbyMarketCard(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            Image(
+            AsyncImage(
                 modifier = Modifier
                     .clip(RoundedCornerShape(12.dp))
                     .fillMaxWidth(0.3f)
                     .height(IntrinsicSize.Min)
                     .aspectRatio(ratio = 1f, matchHeightConstraintsFirst = true),
                 contentScale = ContentScale.Crop,
-                painter = painterResource(R.drawable.img_burger), // TODO: Substituir pela imagem de market.cover
+                model = market.cover,
                 contentDescription = "Imagem do Estabelecimento"
             )
+
             Column {
                 Text(text = market.name, style = Typography.headlineSmall.copy(fontSize = 14.sp))
                 Spacer(modifier = Modifier.height(8.dp))
